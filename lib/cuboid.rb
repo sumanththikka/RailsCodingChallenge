@@ -1,4 +1,4 @@
-require "vertex"
+require "./vertex"
 class Cuboid
 
   attr_accessor :origin, :length, :width, :height
@@ -41,9 +41,9 @@ class Cuboid
   def rotate!(axis, direction)
     return false unless ['clock', 'anti_clock'].include?(direction.to_s) and ['x', 'y', 'z'].include?(axis.to_s.downcase)
     direction_indicator = direction == 'clock' ? 1 : -1
-    changed_coordinate = origin.send(axis) + (direction_indicator * send(axis))
+    changed_coordinate = origin.public_send(axis) + (direction_indicator * public_send(axis))
     return false if changed_coordinate < 0
-    origin.send("#{axis}=", changed_coordinate)
+    origin.public_send("#{axis}=", changed_coordinate)
     return true
   end
   #END public methods that should be your starting point  
