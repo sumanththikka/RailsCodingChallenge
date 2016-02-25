@@ -4,7 +4,7 @@ describe Vertex do
  
   describe "vetex initialisation" do
     it "it initialises the vetex with given co-ordinates" do
-    	vertex = Vertex.new(1,2,3)
+      vertex = Vertex.new(1,2,3)
       expect(vertex.x).to eq(1)
       expect(vertex.y).to eq(2)
       expect(vertex.z).to eq(3)
