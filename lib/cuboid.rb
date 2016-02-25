@@ -1,4 +1,5 @@
-require "vertex"
+require_relative "vertex"
+
 class Cuboid
 
   attr_accessor :origin, :length, :width, :height
