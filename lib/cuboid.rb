@@ -1,4 +1,4 @@
-require "./vertex"
+require "vertex"
 class Cuboid
 
   attr_accessor :origin, :length, :width, :height
