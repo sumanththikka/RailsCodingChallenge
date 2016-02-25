@@ -1,31 +1,31 @@
 require "vertex"
 class Cuboid
 
-	attr_accessor :origin, :length, :width, :height
-	alias :x :length
-	alias :y :width
-	alias :z :height
+  attr_accessor :origin, :length, :width, :height
+  alias :x :length
+  alias :y :width
+  alias :z :height
   
   #BEGIN public methods that should be your starting point
 
   # Assuming there's no other data, changing just the origin of the cuboid
   def move_to!(x, y, z)
-  	origin.x = x
-  	origin.y = y
-  	origin.z = z
+    origin.x = x
+    origin.y = y
+    origin.z = z
   end
   
   def vertices   
   	[
-  		Vertex.new(origin.x, origin.y, origin.z),
-			Vertex.new((origin.x + length), origin.y, origin.z),
-			Vertex.new((origin.x + length), (origin.y + width), origin.z),
-			Vertex.new((origin.x + length), (origin.y + width), (origin.z + height)),
-			Vertex.new(origin.x, (origin.y + width), origin.z),
-			Vertex.new(origin.x, (origin.y + width), (origin.z + height)),
-			Vertex.new(origin.x, origin.y, (origin.z + height)),
-			Vertex.new((origin.x + length), origin.y, (origin.z + height))
-		]
+	  Vertex.new(origin.x, origin.y, origin.z),
+	  Vertex.new((origin.x + length), origin.y, origin.z),
+	  Vertex.new((origin.x + length), (origin.y + width), origin.z),
+	  Vertex.new((origin.x + length), (origin.y + width), (origin.z + height)),
+	  Vertex.new(origin.x, (origin.y + width), origin.z),
+	  Vertex.new(origin.x, (origin.y + width), (origin.z + height)),
+	  Vertex.new(origin.x, origin.y, (origin.z + height)),
+	  Vertex.new((origin.x + length), origin.y, (origin.z + height))
+	]
   end
   
   #returns true if the two cuboids intersect each other.  False otherwise.
